@@ -1,7 +1,7 @@
 @import 'bootstrap/mixins'
 @import 'variables'
 
-$shadow_color: rgba(#000, .3)
+$shadow_color: rgba(#000, .5)
 
 body
   position: absolute
@@ -27,7 +27,7 @@ body
       left: 0px
       right: 0px
       @include gradient-horizontal-three-colors(rgba(#fff,0), rgba(#fff,1), 50%, rgba(#fff,0))
-      @include box-shadow(0 0 20px $shadow_color)
+      //@include box-shadow(0 0 20px $shadow_color)
       background-color: transparent
   
   #banner
@@ -72,7 +72,7 @@ body
         left: 10%
         right: 10%
         @include gradient-horizontal-three-colors(rgba(#555,0), rgba(#555,0.5), 50%, rgba(#555,0))
-        @include box-shadow(0 0 20px $shadow_color)
+        //@include box-shadow(0 0 20px $shadow_color)
         background-color: transparent
     
     .thumbnail
