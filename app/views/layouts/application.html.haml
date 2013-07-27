@@ -6,5 +6,12 @@
     = javascript_include_tag 'application', async: true
     = analytics_init if Rails.env.production?
     = csrf_meta_tags
+    
+    %meta{ name: 'description', content: 'Memory Jar - Photography and web development ' }
+    %meta{ name: 'keywords',    content: 'Azuresong, Memory jar, Photography, Web development' }
+    %meta{ name: 'language',    content: 'English' }
+    %meta{ name: 'author',      content: 'Shuo Chen' }
+    %meta{ name: 'copyright',   content: "#{Date.today.year} Shuo Chen" }
+    
   %body
     = yield
