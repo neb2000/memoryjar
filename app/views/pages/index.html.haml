@@ -1,0 +1,57 @@
+#banner
+  #bannertext
+    %h1
+      Memory Jar
+    %p
+      Photography and web development
+    = link_to '#content' do
+      %i.icon-double-angle-down
+#content
+  .container
+    #about-me.section
+      .row
+        .span12
+          %h3 About Me
+          %p 
+            %strong Hi and welcome to my personal website!
+          %p
+            My name is Shuo Chen, a #{link_to 'University of Sheffield', url_for('http://www.sheffield.ac.uk'), target: '_blank', title: 'Go to University of Sheffield Website'} graduate with a Master degree in Software Engineering.
+          %p
+            I&apos;m currently working for #{link_to 'epiGenesys', url_for('http://www.epigenesys.co.uk'), title: 'epiGenesys - a University of Sheffield company', target: '_blank'} - a University of Sheffield company. I specialise in Ruby on Rails, jQuery, CSS, SQL and web programming in general.
+          %p
+            When I&apos;m free, I like to travel around the country and take photos. You may have a look at my work on my #{link_to 'Flickr page', url_for('https://www.flickr.com/photos/neb2000/'), target: '_blank'}.
+          %p If you find yourself in need of any of my skills, please contact me via #{mail_to 'nebaries@gmail.com', 'e-mail'}, or any of the social media listed at the bottom of the page.
+    #portfolio.section
+      .row
+        .span12
+          %h3 Portfolio
+      %ul.thumbnails
+        - with_options target: '_blank', class: 'thumbnail' do |links|
+          %li.span4
+            = links.link_to image_tag('portfolio/website_1.jpg', width: 300, height: 185), url_for('http://www.asc10.eu'), title: 'Ascendance guild - EU Alonsus'
+          %li.span4
+            = links.link_to image_tag('portfolio/website_2.jpg', width: 300, height: 185), url_for('http://www.richlinley.co.uk'), title: 'Rich Linley photography'
+          %li.span4
+            = links.link_to image_tag('portfolio/website_3.jpg', width: 300, height: 185), url_for('http://wherearewegoingforlunch.co.uk'), title: 'Where are we going for lunch?'
+%footer
+  .container
+    %ul.unstyled.media-links
+      - with_options target: '_blank' do |links|
+        %li
+          = links.link_to url_for('https://www.facebook.com/neb2000'), title: 'Facebook' do
+            %i.icon-facebook-sign
+        %li
+          = links.link_to url_for('https://twitter.com/neb2000'), title: 'Twitter' do
+            %i.icon-twitter-sign
+        %li
+          = links.link_to url_for('https://www.flickr.com/photos/neb2000/'), title: 'Flickr' do
+            %i.icon-flickr
+        %li
+          = links.link_to url_for('https://github.com/neb2000'), title: 'Github' do
+            %i.icon-github-sign
+        %li
+          = links.link_to url_for('https://www.linkedin.com/pub/shuo-chen/20/807/571'), title: 'LinkedIn' do
+            %i.icon-linkedin-sign
+        %li
+          = links.link_to url_for('https://plus.google.com/117798368047127975385/posts'), title: 'Google +' do
+            %i.icon-google-plus-sign

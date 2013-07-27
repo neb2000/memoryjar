@@ -1,0 +1,39 @@
+#!/bin/bash
+APP_USER="rails"
+TIMEOUT=${TIMEOUT-60}
+APP_ROOT="/srv/websites/memoryjar/current"
+CMD="$APP_ROOT/bin/unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+[[ $EUID -eq 0 ]] && CMD="sudo -H -u $APP_USER -i $CMD"
+
+sig () {
+  PID="$APP_ROOT/tmp/pids/unicorn.pid"
+  test -s "$PID" && kill -$1 `cat $PID`
+}
+
+case "$1" in
+  start)
+    echo -n "Starting Unicorn: "
+    sig 0 && echo >&2 "$APP_NAME already running" && exit 0
+    $CMD && echo "$APP_NAME started"
+    ;;
+  stop)
+    echo -n "Stopping Unicorn: "
+    sig QUIT && echo "$APP_NAME stopped" && exit 0
+    echo >&2 "$APP_NAME not running"
+    ;;
+  restart|force-reload|reload-config)
+    echo -n "Restarting Unicorn: "
+    sig HUP && echo "$APP_NAME restarted" && exit 0
+    echo >&2 "$APP_NAME not running"
+    ;;
+  reload-app)
+    echo -n "Reloading Unicorn application: "
+    sig USR2 && sleep 5 && sig 0 && echo "$APP_NAME reloaded" && exit 0
+    echo >&2 "$APP_NAME reload failed"
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|reload-config|reload-app|restart|force-reload}" >&2
+    exit 1
+    ;;
+esac
+exit 0

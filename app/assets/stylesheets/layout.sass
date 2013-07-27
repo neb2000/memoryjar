@@ -1,0 +1,104 @@
+@import 'bootstrap/mixins'
+@import 'variables'
+
+$shadow_color: rgba(#000, .3)
+
+body
+  -webkit-font-smoothing: antialiased
+  position: absolute
+  height: 100%
+  width: 100%
+  padding: 0
+  background: image-url('bg.jpg') no-repeat fixed 50% 0
+  background-size: cover
+  font-family: 'Lato', Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-weight: 400
+  h1, h2, h3
+    font-weight: 400
+  h1
+    font-size: 90px
+    line-height: 135px
+    font-family: 'IM Fell English'
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0px
+      height: 1px
+      left: 0px
+      right: 0px
+      @include gradient-horizontal-three-colors(rgba(#fff,0), rgba(#fff,1), 50%, rgba(#fff,0))
+      @include box-shadow(0 0 20px $shadow_color)
+      background-color: transparent
+  
+  #banner
+    color: #fff
+    height: 100%
+    width: 100%
+    overflow: hidden    
+    
+    #bannertext
+      text-align: center
+      text-shadow: 0 0 10px $shadow_color, 0 0 20px $shadow_color, 0 0 40px $shadow_color, 0 0 60px $shadow_color
+      position: fixed
+      top: 20%
+      left: 25%
+      width: 50%
+      a
+        color: #fff
+        font-size: 40px
+      a:hover
+        text-decoration: none
+      
+  #content
+    @include box-shadow(0 0 20px $shadow_color)
+    background: image-url('bg_blurred.jpg') no-repeat fixed 50% 0
+    background-size: cover
+    position: relative
+    z-index: 10
+    padding: 20px
+    
+    .section
+      p:last-child
+        margin-bottom: 45px
+    
+    .section + .section
+      position: relative
+      &:after
+        content: ''
+        position: absolute
+        top: 0px
+        height: 1px
+        left: 10%
+        right: 10%
+        @include gradient-horizontal-three-colors(rgba(#555,0), rgba(#555,0.5), 50%, rgba(#555,0))
+        @include box-shadow(0 0 20px $shadow_color)
+        background-color: transparent
+    
+    .thumbnail
+      @include border-radius(0)
+      @include box-shadow(none)
+      border: none
+      padding: 0px
+      img
+        @include box-shadow(0 0 10px $shadow_color)
+    
+  footer
+    padding: 0 20px
+    background-color: rgba(#000,.75)
+    .media-links
+      margin: 0
+      font-size: 40px
+      line-height: 40px
+      text-align: center
+      padding: 20px 0
+      li
+        display: inline-block
+        a
+          color: #fff
+          @include opacity(20)
+        a:hover
+          text-decoration: none
+          @include opacity(100)
+      li + li
+        margin-left: 20px
