@@ -11,8 +11,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
-gem 'jquery-turbolinks'
-gem 'turbolinks'
+gem 'google-analytics-rails', github: 'bgarret/google-analytics-rails'
 
 gem 'unicorn'
 

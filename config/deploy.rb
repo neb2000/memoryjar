@@ -9,7 +9,7 @@ set :rvm_type, :user
 set :scm, :git
 set :deploy_via, :remote_cache
 
-set :repository, "git@bigpurplefish.co.uk:#{application}.git"
+set :repository, "git@github.com:neb2000/#{application}.git"
 
 set :deploy_to, "/srv/websites/#{application}"
 
@@ -47,6 +47,9 @@ namespace :deploy do
   task :symlink_shared do
     run "ln -nfs #{File.join(shared_path, 'config', 'database.yml')} #{File.join(release_path,'config','database.yml')}"
     run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
+  end
+  
+  task :migrate do
   end
   
   namespace :db do 
