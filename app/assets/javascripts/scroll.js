@@ -2,7 +2,7 @@ function EasyPeasyParallax() {
   scrollPos = $(this).scrollTop();
   $('#bannertext').css({
    'margin-top': (scrollPos/4)+"px",
-   'opacity': 1-(scrollPos/250)
+   'opacity': Math.max(1-(scrollPos/300), 0)
   });
 }
 
