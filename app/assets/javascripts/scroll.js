@@ -7,6 +7,9 @@ function EasyPeasyParallax() {
 }
 
 $(document).ready(function() {
+  $(document).on('touchmove', function() {
+    EasyPeasyParallax();
+  });
   $(window).scroll(function() {
 		EasyPeasyParallax();
 	});
