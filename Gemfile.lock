@@ -4,6 +4,14 @@ GIT
   specs:
     google-analytics-rails (0.0.4)
 
+GIT
+  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
+  revision: 6058414a85c25a45fb6fc4864dbd3499d02f879f
+  branch: 3
+  specs:
+    bootstrap-sass (3.0.0.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,8 +43,6 @@ GEM
       rake
     arel (4.0.0)
     atomic (1.1.10)
-    bootstrap-sass (2.3.2.1)
-      sass (~> 3.2)
     builder (3.1.4)
     capistrano (2.15.5)
       highline
@@ -114,7 +120,7 @@ GEM
     rake (10.1.0)
     rvm-capistrano (1.4.1)
       capistrano (>= 2.0.0)
-    sass (3.2.9)
+    sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
@@ -153,7 +159,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bootstrap-sass
+  bootstrap-sass!
   capistrano
   coffee-rails
   dalli

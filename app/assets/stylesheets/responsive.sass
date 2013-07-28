@@ -1,48 +1,41 @@
 @import 'bootstrap/mixins'
 @import 'variables'
 
-$shadow_color: rgba(#000, .5)
-@media (max-width: 480px)
+@media (min-width: $screen-tablet)
   body
-    font-size: 16px
-    line-height: 24px
-    background-size: auto
+    font-size: $font-size-base
+    
     h1
-      font-size: 45px
-      line-height: 67.5px
+      font-size: 90px
+    h3
+      font-size: 41px
+      
+    #banner #bannertext #scroll-down
+      font-size: 50px
 
-    #banner
-      #bannertext
-        position: absolute
-        top: 20%
-        left: 10%
-        width: 80%
-        text-shadow: 0 0 10px $shadow_color, 0 0 20px $shadow_color
-        a
-          color: #fff
-          font-size: 40px
-        a:hover
-          text-decoration: none
-          
+    footer .media-links
+      font-size: 40px    
+        
+@media (min-width: $screen-desktop)
+  body
+    background-size: cover
+    
+    #banner #bannertext
+      text-shadow: 0 0 10px $shadow-color, 0 0 20px $shadow-color, 0 0 40px $shadow-color
+      position: fixed
+      top: 20%
+      bottom: 0
+      left: 25%
+      width: 50%
+
     #content
-      padding: 0 20px
-      background: #fff
-      h3
-        font-size: 24px
-        line-height: 36px
-      .section
-        p:last-child
-          margin-bottom: 20px
-      .thumbnails
-        li
-          margin-left: 10px
-        img
-          width: auto !important
+      background: rgba(#fff,.8)
+      padding: 20px
+      
+      .section p:last-child
+        margin-bottom: 45px
+
     footer
+      padding: 0 20px
       .media-links
-        padding: 10px 0
-        margin: 0
-        font-size: 24px
-        line-height: 24px
-        li
-          line-height: 24px
+        padding: 20px 0

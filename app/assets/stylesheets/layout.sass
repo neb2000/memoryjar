@@ -1,21 +1,21 @@
 @import 'bootstrap/mixins'
 @import 'variables'
 
-$shadow_color: rgba(#000, .5)
-
 body
+  font-size: 16px
   position: absolute
   height: 100%
   width: 100%
   padding: 0
   background: image-url('bg.jpg') no-repeat fixed 50% 0
-  background-size: cover
   font-family: 'Lato', Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif
   font-weight: 400
+  
   h1, h2, h3
     font-weight: 400
+    
   h1
-    font-size: 90px
+    font-size: 45px
     line-height: 135px
     font-family: 'IM Fell English'
     position: relative
@@ -27,9 +27,10 @@ body
       left: 0px
       right: 0px
       @include gradient-horizontal-three-colors(rgba(#fff,0), rgba(#fff,1), 50%, rgba(#fff,0))
-      //@include box-shadow(0 0 20px $shadow_color)
       background-color: transparent
-  
+  h3
+    font-size: 24px
+
   #banner
     color: #fff
     height: 100%
@@ -37,42 +38,42 @@ body
     overflow: hidden
     @include gradient-vertical(rgba(#000,0.2), rgba(#000,0))
     background-color: transparent
-    
+
     #bannertext
       text-align: center
-      text-shadow: 0 0 10px $shadow_color, 0 0 20px $shadow_color, 0 0 40px $shadow_color
-      position: fixed
+      position: absolute
       top: 20%
       bottom: 0
-      left: 25%
-      width: 50%
+      left: 10%
+      width: 80%
+      text-shadow: 0 0 10px $shadow-color, 0 0 20px $shadow-color
       #scroll-down
         color: #fff
-        font-size: 50px
+        font-size: 40px
         outline: none
         position: absolute
         bottom: 20px
         left: 50%
         margin-left: -23px
-        @include opacity(50)
+        opacity: 0.5
         @include transition(opacity 0.2s linear)
         &:hover, &:focus
-          @include opacity(100)
+          opacity: 1
           text-decoration: none
-      
-      
+
+
   #content
-    @include box-shadow(0 0 20px $shadow_color)
-    background: rgba(#fff,.8)
+    @include box-shadow(0 0 20px $shadow-color)
+    padding: 0 20px
+    background: #fff
+    
     position: relative
-    
     z-index: 10
-    padding: 20px
-    
+
     .section
       p:last-child
-        margin-bottom: 45px
-    
+        margin-bottom: 20px
+
     .section + .section
       position: relative
       &:after
@@ -83,17 +84,18 @@ body
         left: 10%
         right: 10%
         @include gradient-horizontal-three-colors(rgba(#555,0), rgba(#555,0.5), 50%, rgba(#555,0))
-        //@include box-shadow(0 0 20px $shadow_color)
         background-color: transparent
-    
+
     .thumbnail
-      @include border-radius(0)
+      border-radius: 0px
       @include box-shadow(none)
+      margin-bottom: 30px
       border: none
       padding: 0px
       img
-        @include box-shadow(0 0 10px $shadow_color)
-    
+        width: 100%
+        @include box-shadow(0 0 10px $shadow-color)
+
   footer
     padding: 0 20px
     background-color: rgba(#000,.75)
@@ -101,18 +103,19 @@ body
       position: relative
       z-index: 10
       margin: 0
-      font-size: 40px
-      line-height: 40px
+      font-size: 24px
+      line-height: 1
       text-align: center
-      padding: 20px 0
+      padding: 10px 0
       li
+        line-height: 1
         display: inline-block
         a
           color: #fff
-          @include opacity(20)
+          opacity: 0.2
           @include transition(opacity 0.2s linear)
         a:hover
           text-decoration: none
-          @include opacity(100)
+          opacity: 1
       li + li
         margin-left: 20px

@@ -8,7 +8,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'font-awesome-rails'
 
 gem 'google-analytics-rails', github: 'bgarret/google-analytics-rails'

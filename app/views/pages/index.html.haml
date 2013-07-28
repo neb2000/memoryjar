@@ -25,13 +25,13 @@
       .row
         .span12
           %h3 Portfolio
-      %ul.thumbnails
+      .row
         - with_options target: '_blank', class: 'thumbnail' do |links|
-          %li.span4
+          .col-12.col-sm-4.col-lg-4
             = links.link_to image_tag('portfolio/website_1.jpg', width: 300, height: 185), url_for('http://www.asc10.eu'), title: 'Ascendance guild - EU Alonsus'
-          %li.span4
+          .col-12.col-sm-4.col-lg-4
             = links.link_to image_tag('portfolio/website_2.jpg', width: 300, height: 185), url_for('http://www.richlinley.co.uk'), title: 'Rich Linley photography'
-          %li.span4
+          .col-12.col-sm-4.col-lg-4
             = links.link_to image_tag('portfolio/website_3.jpg', width: 300, height: 185), url_for('http://wherearewegoingforlunch.co.uk'), title: 'Where are we going for lunch?'
 %footer
   .container
