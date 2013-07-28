@@ -34,27 +34,38 @@ body
     color: #fff
     height: 100%
     width: 100%
-    overflow: hidden    
+    overflow: hidden
+    @include gradient-vertical(rgba(#000,0.2), rgba(#000,0))
+    background-color: transparent
     
     #bannertext
       text-align: center
       text-shadow: 0 0 10px $shadow_color, 0 0 20px $shadow_color, 0 0 40px $shadow_color
       position: fixed
       top: 20%
+      bottom: 0
       left: 25%
       width: 50%
-      a
+      #scroll-down
         color: #fff
-        font-size: 40px
+        font-size: 50px
         outline: none
-      a:hover, a:focus
-        text-decoration: none
+        position: absolute
+        bottom: 20px
+        left: 50%
+        margin-left: -23px
+        @include opacity(50)
+        @include transition(opacity 0.2s linear)
+        &:hover, &:focus
+          @include opacity(100)
+          text-decoration: none
+      
       
   #content
     @include box-shadow(0 0 20px $shadow_color)
-    background: image-url('bg_blurred.jpg') no-repeat fixed 50% 0
-    background-size: cover
+    background: rgba(#fff,.8)
     position: relative
+    
     z-index: 10
     padding: 20px
     
@@ -99,6 +110,7 @@ body
         a
           color: #fff
           @include opacity(20)
+          @include transition(opacity 0.2s linear)
         a:hover
           text-decoration: none
           @include opacity(100)

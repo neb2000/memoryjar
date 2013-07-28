@@ -1,16 +1,23 @@
+@import 'bootstrap/mixins'
+@import 'variables'
+
+$shadow_color: rgba(#000, .5)
 @media (max-width: 480px)
   body
     font-size: 16px
     line-height: 24px
+    background-size: auto
     h1
       font-size: 45px
       line-height: 67.5px
 
     #banner
       #bannertext
+        position: absolute
         top: 20%
         left: 10%
         width: 80%
+        text-shadow: 0 0 10px $shadow_color, 0 0 20px $shadow_color
         a
           color: #fff
           font-size: 40px
@@ -19,13 +26,18 @@
           
     #content
       padding: 0 20px
+      background: #fff
       h3
         font-size: 24px
         line-height: 36px
       .section
         p:last-child
           margin-bottom: 20px
-    
+      .thumbnails
+        li
+          margin-left: 10px
+        img
+          width: auto !important
     footer
       .media-links
         padding: 10px 0

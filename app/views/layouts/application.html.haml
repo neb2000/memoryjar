@@ -6,7 +6,8 @@
     = javascript_include_tag 'application', async: true
     = analytics_init if Rails.env.production?
     = csrf_meta_tags
-    
+    %meta{ name: 'viewport',    content: 'width=device-width, initial-scale=1.0, user-scalable=no' }
+    %meta{ name: 'apple-mobile-web-app-capable', content: 'yes' }
     %meta{ name: 'description', content: 'Memory Jar - Photography and web development ' }
     %meta{ name: 'keywords',    content: 'Azuresong, Memory jar, Photography, Web development' }
     %meta{ name: 'language',    content: 'English' }
