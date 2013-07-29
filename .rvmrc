@@ -1,1 +1,1 @@
-rvm --create 2.0.0@memo
+rvm use --create 2.0.0@memo
