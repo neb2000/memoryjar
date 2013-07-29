@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'haml-rails'
+# gem 'haml-rails'
+gem 'slim-rails'
 
 gem 'sass-rails'
 gem 'uglifier'

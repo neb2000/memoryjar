@@ -1,6 +1,6 @@
 function EasyPeasyParallax() {
   scrollPos = $(this).scrollTop();
-  $('#bannertext').css({
+  $('#banner-text').css({
    'margin-top': (scrollPos/5)+"px",
   });
   $('#banner').css({
