@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-# gem 'haml-rails'
 gem 'slim-rails'
 
 gem 'sass-rails'
@@ -26,6 +25,3 @@ group :development do
   gem 'thin'
   gem 'annotate'
 end
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
