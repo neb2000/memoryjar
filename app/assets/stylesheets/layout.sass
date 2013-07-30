@@ -30,6 +30,7 @@ body
       background-color: transparent
   h3
     font-size: 24px
+    text-shadow: 0px 1px 0px #e5e5ee
 
   #banner
     color: #fff
@@ -64,6 +65,7 @@ body
 
   #content
     @include box-shadow(0 0 20px $shadow-color)
+    text-shadow: 0px 1px 0px #e5e5ee
     padding: 0 20px
     background: #fff
     
@@ -87,15 +89,13 @@ body
         background-color: transparent
 
     .thumbnail
-      border-radius: 0px
-      @include box-shadow(none)
+      display: block
       margin-bottom: 30px
-      border: none
-      padding: 0px
+      text-align: center
       img
-        width: 100%
-        @include box-shadow(0 0 10px $shadow-color)
-
+        border-radius: 5px
+        @include box-shadow(0 0 10px rgba(#000,0.2))
+          
   footer
     padding: 0 20px
     background-color: rgba(#000,.75)
